@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export const useFormattedData = () => {
   const formatted = users;
+  const [data, setData] = useState([]);
 
   const sortBy = (param: string) => {
     if (param === "firstName") {
@@ -10,6 +11,9 @@ export const useFormattedData = () => {
         a.firstName.localeCompare(b.firstName)
       );
       console.log("Sorted Array:", res);
+      if (res !== undefined) {
+        setData(res);
+      }
       return res;
     }
   };
