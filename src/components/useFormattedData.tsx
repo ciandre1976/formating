@@ -23,10 +23,8 @@ export const useFormattedData = () => {
   };
 
   const search = (prop: string) => {
-    console.log("yaya");
     const newArray: [] = [];
     formatted.map((user) => {
-      console.log(user.gender);
       if (user.gender === prop) newArray.push(user);
       if (user.firstName === prop) newArray.push(user);
       if (user.lastName === prop) newArray.push(user);
@@ -35,7 +33,7 @@ export const useFormattedData = () => {
       return newArray;
     });
 
-    console.log("evvo", newArray);
+    console.log(`Search by ${prop}`, newArray);
   };
 
   return { formatted, sortBy, filter, search };

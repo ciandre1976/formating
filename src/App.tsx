@@ -5,12 +5,12 @@ import { useFormattedData } from "./components/useFormattedData";
 function App() {
   const { formatted, sortBy, filter, search } = useFormattedData();
 
-  const param = "Parigi";
+  const param = "Male";
   useEffect(() => {
-    //search(param); //radi
-   // filter();
+    search(param); //radi
+    // filter();
     sortBy("firstName");
-  }, [search,sortBy]);
+  }, [search, sortBy]);
 
   return (
     <>
