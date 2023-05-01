@@ -4,8 +4,14 @@ import { useState } from "react";
 export const useFormattedData = () => {
   const formatted = users;
 
-  const sortBy = () => {
-    console.log("sort");
+  const sortBy = (param: string) => {
+    if (param === "firstName") {
+      const res = formatted.sort((a, b) =>
+        a.firstName.localeCompare(b.firstName)
+      );
+      console.log("Sorted Array:", res);
+      return res;
+    }
   };
 
   const filter = () => {

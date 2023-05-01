@@ -7,10 +7,10 @@ function App() {
 
   const param = "Parigi";
   useEffect(() => {
-    search(param); //radi
-    filter();
-    sortBy();
-  }, [search]);
+    //search(param); //radi
+   // filter();
+    sortBy("firstName");
+  }, [search,sortBy]);
 
   return (
     <>
