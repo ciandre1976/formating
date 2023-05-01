@@ -5,11 +5,12 @@ import { useFormattedData } from "./components/useFormattedData";
 function App() {
   const { formatted, sortBy, filter, search } = useFormattedData();
 
+  const param = "Parigi";
   useEffect(() => {
-    search();
+    search(param); //radi
     filter();
     sortBy();
-  }, []);
+  }, [search]);
 
   return (
     <>
