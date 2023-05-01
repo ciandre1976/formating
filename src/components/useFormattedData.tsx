@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export const useFormattedData = () => {
   const formatted = users;
+
   const [data, setData] = useState([]);
 
   const sortBy = (param: string) => {
@@ -18,6 +19,7 @@ export const useFormattedData = () => {
     }
   };
 
+  //filter(({ zip }) => zip > 486);
 
   const filter = function (prop: string) {
     const res = formatted.filter((user) => user.gender !== prop);
@@ -26,7 +28,7 @@ export const useFormattedData = () => {
   };
 
   const search = (prop: string) => {
-    const newArray: [] = [];
+    const newArray: any[] | ((prevState: never[]) => never[]) = [];
     formatted.map((user) => {
       if (user.gender === prop) newArray.push(user);
       if (user.firstName === prop) newArray.push(user);
@@ -36,6 +38,8 @@ export const useFormattedData = () => {
       setData(newArray);
       return newArray;
     });
+
+    console.log("DATA", data);
 
     console.log(`Search by ${prop}`, newArray);
   };
