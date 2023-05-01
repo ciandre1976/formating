@@ -7,10 +7,10 @@ function App() {
 
   const param = "Male";
   useEffect(() => {
-    search(param); //radi
-    // filter();
+    search(param);
+    filter(param);
     sortBy("firstName");
-  }, [search, sortBy]);
+  }, [search, sortBy, filter]);
 
   return (
     <>
@@ -29,3 +29,6 @@ function App() {
 }
 
 export default App;
+function Fun(arg0: string): string {
+  throw new Error("Function not implemented.");
+}

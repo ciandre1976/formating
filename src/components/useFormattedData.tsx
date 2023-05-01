@@ -18,8 +18,11 @@ export const useFormattedData = () => {
     }
   };
 
-  const filter = () => {
-    console.log("FILTER");
+
+  const filter = function (prop: string) {
+    const res = formatted.filter((user) => user.gender !== prop);
+    console.log("fILTER:", res);
+    setData(res);
   };
 
   const search = (prop: string) => {
@@ -30,6 +33,7 @@ export const useFormattedData = () => {
       if (user.lastName === prop) newArray.push(user);
       if (user.city === prop) newArray.push(user);
       if (user.email === prop) newArray.push(user);
+      setData(newArray);
       return newArray;
     });
 
