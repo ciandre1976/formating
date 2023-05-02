@@ -14,9 +14,9 @@ function App() {
 
   return (
     <>
-      <h3>Users By First Name:</h3>
+      <h3 style={{ color: "red" }}>Users By First Name:</h3>
       {formatted.map(({ id, firstName, lastName, birthdate }) => (
-        <div key={id}>
+        <div style={{ background: "#BADA55" }} key={id}>
           <div>
             <b>
               {firstName} {lastName}
