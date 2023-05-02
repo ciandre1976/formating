@@ -19,11 +19,9 @@ export const useFormattedData = () => {
     }
   };
 
-  //filter(({ zip }) => zip > 486);
-
   const filter = function (prop: string) {
     const res = formatted.filter((user) => user.gender !== prop);
-    console.log("fILTER:", res);
+    console.log("fILTER data:", res);
     setData(res);
   };
 
@@ -38,9 +36,6 @@ export const useFormattedData = () => {
       setData(newArray);
       return newArray;
     });
-
-    console.log("DATA", data);
-
     console.log(`Search by ${prop}`, newArray);
   };
 

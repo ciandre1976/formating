@@ -14,6 +14,7 @@ function App() {
 
   return (
     <>
+      <h3>Users By First Name:</h3>
       {formatted.map(({ id, firstName, lastName, birthdate }) => (
         <div key={id}>
           <div>
@@ -29,6 +30,3 @@ function App() {
 }
 
 export default App;
-function Fun(arg0: string): string {
-  throw new Error("Function not implemented.");
-}
